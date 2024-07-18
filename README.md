@@ -1,6 +1,13 @@
 
 # react-native-lock-task
 
+Fork of react-native-lock-task project. 
+Added : 
+- typescript def
+- use of root project compile sdk version
+- upgraded target version
+- compliance to android defs
+
 ## Getting started
 
 `yarn add react-native-lock-task@git+https://github.com/jeanbino/react-native-lock-task.git`
