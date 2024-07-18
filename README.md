@@ -3,11 +3,7 @@
 
 ## Getting started
 
-`$ npm install react-native-lock-task --save`
-
-### Mostly automatic installation
-
-`$ react-native link react-native-lock-task`
+`yarn add react-native-lock-task@git+https://github.com/jeanbino/react-native-lock-task.git`
 
 ### Settings
 
@@ -38,6 +34,7 @@
         </activity>
 
 +       <receiver android:name="com.rnlocktask.MyAdmin"
++          android:exported="true"
 +           android:label="@string/sample_device_admin"
 +           android:description="@string/sample_device_admin_description"
 +           android:permission="android.permission.BIND_DEVICE_ADMIN">
@@ -93,4 +90,19 @@ RNLockTask.startLockTask();
 RNLockTask.startLockTaskWith(["com.google.android.youtube", "com.sega.sonicdash"]);
 RNLockTask.stopLockTask();
 RNLockTask.clearDeviceOwnerApp();
+```
+## typescript
+
+```ts
+declare module 'react-native-lock-task' {
+    const lockTask: {
+        isAppInLockTaskMode: () => boolean;
+        startLockTask: () => void;
+        startLockTaskWith: (packages: string[]) => void;
+        stopLockTask: () => void;
+        clearDeviceOwnerApp: () => void;
+    };
+
+    export default lockTask;
+}
 ```
